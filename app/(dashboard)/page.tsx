@@ -14,12 +14,12 @@ const Dashboard = () => {
     <Provider store={store}>
       <PersistGate persistor={persistor}>
         <div className="h-full relative">
-          <div className="hidden h-full md:w-64  md:flex md:flex-col md:fixed md:inset-y-0 z-[80] bg-black">
+          <div className="hidden h-full md:w-52  md:flex md:flex-col md:fixed md:inset-y-0 z-[80] bg-black">
             <div>
               <Sidebar />
             </div>
           </div>
-          <main className="md:pl-64 space-y-2">
+          <main className="md:pl-52 space-y-2">
             <Navbar />
 
             <div className="flex justify-between p-2">

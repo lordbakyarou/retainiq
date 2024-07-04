@@ -65,8 +65,8 @@ const ProductCard: React.FC = () => {
       <Table className="h-full border rounded-2xl bg-gray-50">
         <TableHeader className="">
           <TableRow className="">
-            <TableHead className="sticky z-40 left-0 bg-gray-50"></TableHead>
-            <TableHead className="text-center sticky z-40 left-16 bg-gray-50">
+            <TableHead className="md:sticky md:z-40 md:left-0 bg-gray-50"></TableHead>
+            <TableHead className="text-center md:sticky md:z-40 md:left-16 bg-gray-50">
               Product Filter
             </TableHead>
             {data[0].products.map((_row: [], index: number) => {

@@ -45,10 +45,10 @@ const DraggableRow: React.FC<DraggableRowProps> = ({ rowData, index }) => {
       className="bg-gray-50 border-b-0 group "
       key={index}
     >
-      <TableCell className="group relative sticky z-40 left-0 bg-gray-50 ">
+      <TableCell className="group relative md:sticky md:z-40 md:left-0 bg-gray-50 ">
         <SerialNumber index={index} />
       </TableCell>
-      <TableCell className="sticky z-40 left-16 bg-gray-50">
+      <TableCell className="md:sticky md:z-40 md:left-16 bg-gray-50">
         <FilterCard rowData={rowData} index={index} />
       </TableCell>
       {rowData.products.map((row: any, variantId: number) => (
@@ -57,7 +57,7 @@ const DraggableRow: React.FC<DraggableRowProps> = ({ rowData, index }) => {
         </TableCell>
       ))}
 
-      <TableCell className="sticky z-40 left-0">
+      <TableCell className="md:sticky md:z-40 md:left-0">
         <Button variant="outline" size="icon">
           <PlusIcon onClick={createVariant} />
         </Button>
