@@ -99,7 +99,7 @@ const ProductCard: React.FC = () => {
             items={data.map((_: any, index: number) => index)}
             strategy={verticalListSortingStrategy}
           >
-            <TableBody className="">
+            <TableBody className="" key={index}>
               {data.map((row: [], index: number) => (
                 // <div className="mb-10 mt-10">
                 <DraggableRow rowData={row} index={index} />
