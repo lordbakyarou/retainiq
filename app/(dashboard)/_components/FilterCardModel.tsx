@@ -44,7 +44,8 @@ const FilterCard = () => {
   const [filter, setFilter] = useState<string>("");
 
   function handleAddFilter() {
-    if (filter !== "") setFilterValue([...filterValue, filter]);
+    const newData = [...filterValue, filter];
+    if (filter !== "") setFilterValue(newData);
   }
 
   return (
