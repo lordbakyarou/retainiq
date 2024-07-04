@@ -54,9 +54,6 @@ const FilterCard = () => {
       <DialogContent className="sm:max-w-[425px] z-[90]">
         <DialogHeader>
           <DialogTitle>Add filters</DialogTitle>
-          <DialogDescription>
-            Add new product filters. Click save when you're done.
-          </DialogDescription>
         </DialogHeader>
         <div className="grid gap-4 py-4">
           <div className="grid grid-cols-4 items-center gap-4">
