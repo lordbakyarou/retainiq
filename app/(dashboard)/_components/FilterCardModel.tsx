@@ -39,9 +39,9 @@ const FilterCard = () => {
     toast.success("Variant template updated");
   }
 
-  const [filterValue, setFilterValue] = useState([]);
+  const [filterValue, setFilterValue] = useState<string[]>([]);
 
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState<string>("");
 
   function handleAddFilter() {
     if (filter !== "") setFilterValue([...filterValue, filter]);
