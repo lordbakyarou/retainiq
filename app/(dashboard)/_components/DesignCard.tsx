@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateData } from "@/app/redux/features/products";
 
 import toast from "react-hot-toast";
+import { useState } from "react";
 
 const DesignCard = () => {
   const isOpen = useSelector((state: any) => state.design);
@@ -33,6 +34,19 @@ const DesignCard = () => {
     );
     dispatch(close());
     toast.success("Variant template updated");
+  }
+
+  const [filterProduct, setFilterProduct] = useState(designData);
+
+  function handleFilterProduct(event: any) {
+    const value = event.target.value;
+    setFilterProduct(
+      ...[
+        designData.filter((item) =>
+          item.productLabel.toLowerCase().includes(value.toLowerCase())
+        ),
+      ]
+    );
   }
 
   return (
@@ -55,13 +69,17 @@ const DesignCard = () => {
               <p className="font-semibold">Select a design to link</p>
               <div className="relative">
                 <Search className="absolute top-2 left-2 text-gray-500" />
-                <Input className="pl-10" placeholder="Search" />
+                <Input
+                  className="pl-10"
+                  placeholder="Search"
+                  onChange={handleFilterProduct}
+                />
               </div>
             </div>
           </div>
         </DialogHeader>
         <div className="flex flex-wrap gap-2 overflow-auto max-h-[32rem]">
-          {designData.map((data, index) => (
+          {filterProduct.map((data, index) => (
             <div
               className="relative flex items-center flex-col w-40 h-64 justify-center group "
               key={index}
