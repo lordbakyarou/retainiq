@@ -36,7 +36,7 @@ const DraggableRow: React.FC<DraggableRowProps> = ({ rowData, index }) => {
     transform: CSS.Transform.toString(transform),
   };
 
-  console.log(rowData);
+  // console.log(rowData);
 
   return (
     <TableRow

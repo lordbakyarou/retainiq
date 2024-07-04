@@ -7,7 +7,7 @@ interface FilterCardProps {
 }
 
 const FilterCard: React.FC<FilterCardProps> = ({ rowData, index }) => {
-  console.log(rowData, "rowldatarowdata");
+  // console.log(rowData, "rowldatarowdata");
 
   return (
     <div className="flex flex-wrap w-72 gap-2">

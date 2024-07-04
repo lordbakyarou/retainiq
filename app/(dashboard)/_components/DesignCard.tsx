@@ -22,7 +22,7 @@ const DesignCard = () => {
   const dispatch = useDispatch();
 
   function handleInsertVariant({ productImage, productLabel }: any) {
-    console.log(productImage, productLabel);
+    // console.log(productImage, productLabel);
     dispatch(
       updateData({
         index: selectProduct.productId,

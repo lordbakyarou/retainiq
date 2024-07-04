@@ -38,7 +38,7 @@ const ProductCard: React.FC = () => {
 
   function handleAddNewProduct() {
     toast.success("Product added");
-    console.log("ihihi");
+    // console.log("ihihi");
     dispatch(addRow());
   }
 
