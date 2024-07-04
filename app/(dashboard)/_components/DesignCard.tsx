@@ -51,7 +51,7 @@ const DesignCard = () => {
 
   return (
     <Dialog open={isOpen} onOpenChange={() => dispatch(close())}>
-      <DialogContent className="max-w-3xl h-[35rem] overflow-hidden">
+      <DialogContent className="max-w-3xl h-[35rem] overflow-hidden z-[90]">
         <DialogHeader className="border-b py-6 pt-10">
           <div>
             <div className="p-4 rounded-full border  absolute -top-8 -left-6 ">
@@ -65,7 +65,7 @@ const DesignCard = () => {
                 </div>
               </div>
             </div>
-            <div className="flex justify-between gap-2 relative">
+            <div className="flex justify-between max-sm:flex-col items-center gap-2 relative">
               <p className="font-semibold">Select a design to link</p>
               <div className="relative">
                 <Search className="absolute top-2 left-2 text-gray-500" />

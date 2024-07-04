@@ -28,6 +28,7 @@ const Dashboard = () => {
             </div>
             <div className="flex min-w-screen relative">
               <ProductCard />
+
               <DesignCard />
             </div>
           </main>
