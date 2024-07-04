@@ -49,56 +49,57 @@ const ProductCard: React.FC = () => {
 
   const handleDragEnd = (event: any) => {
     const { active, over } = event;
-    console.log(active, over);
+    // console.log(active, over);
 
-    const tableData = data.filter((_: any, i: number) => i === active.id);
+    const tableData = data.filter((_: any, i: number) => i === active.id - 1);
 
-    if (active.id !== over.id) {
-      dispatch(removeRow({ arrayIndex: active.id }));
+    if (active.id - 1 !== over.id - 1) {
+      dispatch(removeRow({ arrayIndex: active.id - 1 }));
 
-      dispatch(setTableData({ insertAtIndex: over.id, row: tableData[0] }));
+      dispatch(setTableData({ insertAtIndex: over.id - 1, row: tableData[0] }));
     }
   };
 
   return (
     <div className="w-full p-5  bg-white">
-      <Table className="h-full border rounded-2xl bg-gray-50">
-        <TableHeader className="">
-          <TableRow className="">
-            <TableHead className="md:sticky md:z-40 md:left-0 bg-gray-50"></TableHead>
-            <TableHead className="text-center md:sticky md:z-40 md:left-16  bg-gray-50 ">
-              Product Filter
-            </TableHead>
-            {data[0].products.map((_row: [], index: number) => {
-              return (
-                <TableHead className="text-center w-full" key={index}>
-                  <div className="flex w-full jusitify-between ">
-                    <p className="w-full"> Variant {index + 1}</p>
-                    <DropdownMenu>
-                      <DropdownMenuTrigger asChild className="cursor-pointer">
-                        <EllipsisVertical />
-                      </DropdownMenuTrigger>
-                      <DropdownMenuContent
-                        className="w-fit p-2 cursor-pointer"
-                        onClick={() => handleDeleteVariant(index)}
-                      >
-                        Delete
-                      </DropdownMenuContent>
-                    </DropdownMenu>
-                  </div>
-                </TableHead>
-              );
-            })}
-          </TableRow>
-        </TableHeader>
-        <DndContext
-          collisionDetection={closestCorners}
-          onDragEnd={handleDragEnd}
+      <DndContext collisionDetection={closestCorners} onDragEnd={handleDragEnd}>
+        <SortableContext
+          items={data.map((_: any, index: number) => index + 1)}
+          strategy={verticalListSortingStrategy}
         >
-          <SortableContext
-            items={data.map((_: any, index: number) => index)}
-            strategy={verticalListSortingStrategy}
-          >
+          <Table className="h-full border rounded-2xl bg-gray-50">
+            <TableHeader className="">
+              <TableRow className="">
+                <TableHead className="md:sticky md:z-40 md:left-0 bg-gray-50"></TableHead>
+                <TableHead className="text-center md:sticky md:z-40 md:left-16  bg-gray-50 ">
+                  Product Filter
+                </TableHead>
+                {data[0].products.map((_row: [], index: number) => {
+                  return (
+                    <TableHead className="text-center w-full" key={index + 1}>
+                      <div className="flex w-full jusitify-between ">
+                        <p className="w-full"> Variant {index + 1}</p>
+                        <DropdownMenu>
+                          <DropdownMenuTrigger
+                            asChild
+                            className="cursor-pointer"
+                          >
+                            <EllipsisVertical />
+                          </DropdownMenuTrigger>
+                          <DropdownMenuContent
+                            className="w-fit p-2 cursor-pointer"
+                            onClick={() => handleDeleteVariant(index)}
+                          >
+                            Delete
+                          </DropdownMenuContent>
+                        </DropdownMenu>
+                      </div>
+                    </TableHead>
+                  );
+                })}
+              </TableRow>
+            </TableHeader>
+
             <TableBody className="">
               {data.map((row: [], index: number) => (
                 // <div className="mb-10 mt-10">
@@ -118,9 +119,9 @@ const ProductCard: React.FC = () => {
                 </TableCell>
               </TableRow>
             </TableBody>
-          </SortableContext>
-        </DndContext>
-      </Table>
+          </Table>
+        </SortableContext>
+      </DndContext>
     </div>
   );
 };

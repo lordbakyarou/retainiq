@@ -18,7 +18,7 @@ const SerialNumber: React.FC<SerialNumberProps> = ({ index }) => {
   }
 
   const { attributes, listeners } = useSortable({
-    id: index,
+    id: index + 1,
   });
 
   return (

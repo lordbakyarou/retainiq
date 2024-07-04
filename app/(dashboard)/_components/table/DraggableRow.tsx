@@ -29,7 +29,7 @@ const DraggableRow: React.FC<DraggableRowProps> = ({ rowData, index }) => {
   }
 
   const { setNodeRef, transform } = useSortable({
-    id: index,
+    id: index + 1,
   });
 
   const style = {
