@@ -15,7 +15,7 @@ const FilterCard: React.FC<FilterCardProps> = ({ rowData, index }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex flex-wrap w-72 gap-2">
+    <div className="flex flex-wrap w-72 gap-2 justify-center">
       {rowData.productFilter.length === 0 ? (
         <div className="flex flex-col h-52 justify-center items-center gap-2 w-52">
           <div

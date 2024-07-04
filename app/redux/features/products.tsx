@@ -55,6 +55,7 @@ const productsSlice = createSlice({
         productImage: "",
         productLabel: "",
       }));
+      console.log("Row added");
       state.push({
         productFilter: [],
         products: newData,
@@ -62,9 +63,11 @@ const productsSlice = createSlice({
     },
     removeRow: (state, action) => {
       const { arrayIndex } = action.payload;
+      console.log("Row removed");
       state.splice(arrayIndex, 1);
     },
     addVariant: (state) => {
+      console.log("Variant Added");
       state.forEach((set) => {
         set.products.push({
           productImage: "",
@@ -74,12 +77,14 @@ const productsSlice = createSlice({
     },
     removeVariant: (state, action) => {
       const { arrayIndex } = action.payload;
+      console.log("Variant Removed");
       state.forEach((set) => {
         set.products = set.products.filter((_, i) => i !== arrayIndex);
       });
     },
     updateData: (state, action) => {
       const { index, itemIndex, productImage, productLabel } = action.payload;
+      console.log("Data updated");
       state[index].products[itemIndex] = {
         productImage: productImage,
         productLabel: productLabel,
@@ -87,10 +92,12 @@ const productsSlice = createSlice({
     },
     setTableData: (state, action) => {
       const { insertAtIndex, row } = action.payload;
+      console.log("Row sorted");
       state.splice(insertAtIndex, 0, row);
     },
     addFilters: (state, action) => {
       const { filterData, index } = action.payload;
+      console.log("filterAdded");
       state[index].productFilter = [...filterData];
     },
   },

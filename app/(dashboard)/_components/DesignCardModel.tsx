@@ -86,7 +86,7 @@ const DesignCardModel = () => {
             >
               <Image
                 src={data.productImage}
-                alt="image 1"
+                alt="image 1 mayur"
                 width={300}
                 height={300}
                 className="rounded"
