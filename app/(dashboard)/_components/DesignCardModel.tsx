@@ -1,6 +1,6 @@
 import { designData } from "@/app/constants/designData";
 import { close } from "@/app/redux/features/designCardOpen";
-import { Button } from "@/app/ui/button";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -16,7 +16,7 @@ import { updateData } from "@/app/redux/features/products";
 import toast from "react-hot-toast";
 import { useState } from "react";
 
-const DesignCard = () => {
+const DesignCardModel = () => {
   const isOpen = useSelector((state: any) => state.design);
   const selectProduct = useSelector((state: any) => state.select);
 
@@ -114,4 +114,4 @@ const DesignCard = () => {
   );
 };
 
-export default DesignCard;
+export default DesignCardModel;

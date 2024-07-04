@@ -7,6 +7,7 @@ import storage from "redux-persist/lib/storage";
 import { persistReducer, persistStore } from "redux-persist";
 import { useDispatch } from "react-redux";
 import designCardOpenReducer from "../features/designCardOpen";
+import filterCardReducer from "../features/filterCardOpen";
 
 const persistConfig = {
   key: "root",
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   product: productsReducer,
   design: designCardOpenReducer,
   select: selectProductReducer,
+  filter: filterCardReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

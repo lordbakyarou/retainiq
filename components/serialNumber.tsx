@@ -1,5 +1,5 @@
 import { removeRow } from "@/app/redux/features/products";
-import { Button } from "@/app/ui/button";
+import { Button } from "@/components/ui/button";
 import { useSortable } from "@dnd-kit/sortable";
 import { Grip, Trash2 } from "lucide-react";
 import { useDispatch } from "react-redux";

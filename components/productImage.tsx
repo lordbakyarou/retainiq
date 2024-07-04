@@ -27,14 +27,14 @@ const ProductImage: React.FC<ProductImageProps> = ({
   return (
     <div className="flex justify-center">
       {productImage && productImage !== "" ? (
-        <div className="flex flex-col items-center gap-2 w-52">
+        <div className="flex flex-col items-center gap-2 justify-center w-52">
           <div className="relative items-center flex justify-center">
             <Image
               src={productImage}
               alt={productLabel}
               width={100}
               height={100}
-              className="rounded"
+              className="rounded object-cover"
             />
             <SquarePen
               className="absolute p-1 bg-white hidden text-black rounded hover:flex group-hover:flex cursor-pointer"
@@ -42,7 +42,7 @@ const ProductImage: React.FC<ProductImageProps> = ({
               onClick={handleDesignOpen}
             />
           </div>
-          <p className="font-medium">{productLabel}</p>
+          <p className="font-medium truncate">{productLabel}</p>
         </div>
       ) : (
         <div className="flex flex-col h-52 justify-center items-center gap-2 w-52">

@@ -1,5 +1,5 @@
-import { Button } from "@/app/ui/button";
-import { TableCell, TableRow } from "@/app/ui/table";
+import { Button } from "@/components/ui/button";
+import { TableCell, TableRow } from "@/components/ui/table";
 import FilterCard from "@/components/filterCard";
 import ProductImage from "@/components/productImage";
 import SerialNumber from "@/components/serialNumber";

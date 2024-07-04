@@ -2,12 +2,13 @@
 import Navbar from "@/components/navbar";
 
 import Sidebar from "@/components/sidebar";
-import { Button } from "@/app/ui/button";
+import { Button } from "@/components/ui/button";
 import store, { persistor } from "../redux/app/store";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import ProductCard from "./_components/ProductCard";
-import DesignCard from "./_components/DesignCard";
+import FilterCardModel from "./_components/FilterCardModel";
+import DesignCardModel from "./_components/DesignCardModel";
 
 const Dashboard = () => {
   return (
@@ -29,7 +30,8 @@ const Dashboard = () => {
             <div className="flex min-w-screen relative">
               <ProductCard />
 
-              <DesignCard />
+              <DesignCardModel />
+              <FilterCardModel />
             </div>
           </main>
         </div>

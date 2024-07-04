@@ -7,10 +7,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/app/ui/table";
+} from "@/components/ui/table";
 
 import { Eclipse, EllipsisVertical, PlusIcon } from "lucide-react";
-import { Button } from "@/app/ui/button";
+import { Button } from "@/components/ui/button";
 import DraggableRow from "@/app/(dashboard)/_components/table/DraggableRow";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -66,7 +66,7 @@ const ProductCard: React.FC = () => {
         <TableHeader className="">
           <TableRow className="">
             <TableHead className="md:sticky md:z-40 md:left-0 bg-gray-50"></TableHead>
-            <TableHead className="text-center md:sticky md:z-40 md:left-16 bg-gray-50">
+            <TableHead className="text-center md:sticky md:z-40 md:left-16  bg-gray-50 ">
               Product Filter
             </TableHead>
             {data[0].products.map((_row: [], index: number) => {
