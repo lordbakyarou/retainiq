@@ -1,8 +1,8 @@
 "use client";
 
 import { Menu } from "lucide-react";
-import { Button } from "./ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { Button } from "../app/ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "../app/ui/sheet";
 import Sidebar from "./sidebar";
 
 const MobileSidebar = () => {
