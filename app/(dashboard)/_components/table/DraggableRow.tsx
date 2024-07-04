@@ -43,6 +43,7 @@ const DraggableRow: React.FC<DraggableRowProps> = ({ rowData, index }) => {
       ref={setNodeRef}
       style={style}
       className="bg-gray-50 border-b-0 group "
+      key={index}
     >
       <TableCell className="group relative sticky z-40 left-0 bg-gray-50 ">
         <SerialNumber index={index} />
