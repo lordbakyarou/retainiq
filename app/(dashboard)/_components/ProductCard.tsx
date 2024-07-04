@@ -71,7 +71,7 @@ const ProductCard: React.FC = () => {
             </TableHead>
             {data[0].products.map((_row: [], index: number) => {
               return (
-                <TableHead className="text-center w-full">
+                <TableHead className="text-center w-full" key={index}>
                   <div className="flex w-full jusitify-between ">
                     <p className="w-full"> Variant {index + 1}</p>
                     <DropdownMenu>

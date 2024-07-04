@@ -61,8 +61,11 @@ const DesignCard = () => {
           </div>
         </DialogHeader>
         <div className="flex flex-wrap gap-2 overflow-auto max-h-[32rem]">
-          {designData.map((data) => (
-            <div className="relative flex items-center flex-col w-40 h-64 justify-center group ">
+          {designData.map((data, index) => (
+            <div
+              className="relative flex items-center flex-col w-40 h-64 justify-center group "
+              key={index}
+            >
               <Image
                 src={data.productImage}
                 alt="image 1"
